@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Script MT";
+    src: url(assets/fonts/SCRIPTBL.TTF);
+}
+
+:root {
+    --clr-primary-300: #D0C8BC;
+    --clr-primary-600: #553810;
+    --clr-accent-400: #9D6265;
+    --ff-primary: "Kameron", sans-serif;
+    --ff-accent: "Script MT", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--ff-primary);
+    font-weight: 800;
+}
+
+section {
+    padding: 3rem 0;
+}
+
+.container {
+    margin-inline: auto;
+    width: 80%;
+}
+
+.bg-light {
+    background-color: var(--clr-primary-300);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/*****************************
+ *
+ * Header
+ *
+ *****************************/
+
+header {
+    height: 100vh;
+    background: url("../../assets/images/backenmain.jpg") no-repeat;
+    background-size: 100%;
+}
+
+
+/*****************************
+ *
+ * Viewports, Viewports setzt man, damit die Website responsive ist. Das heißt, die Website passt sich an die Größe des Endgerätes an und wird strukturiert angezeigt.
+ *
+ *****************************/
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {
+    html,
+    body {
+        font-size: 5px;
+    }
+}
+
+
+/*  Small devices sm (landscape phones, 576px and up) */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    html,
+    body {
+        font-size: 6px;
+    }
+}
+
+
+/*  Medium devices md (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    html,
+    body {
+        font-size: 8px;
+    }
+}
+
+
+/*  Large2 devices lg (desktops, 992px and up) */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    html,
+    body {
+        font-size: 10px;
+    }
+}
+
+
+/*  Large devices lg (desktops, 992px and up) */
+
+@media (min-width: 1200px) and (max-width: 1299.98px) {
+    html,
+    body {
+        font-size: 12px;
+    }
+}
+
+
+/*  Extra large devices xl (large desktops, 1200px and up) */
+
+@media (min-width: 1300px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+}
