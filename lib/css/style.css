@@ -60,7 +60,7 @@ a {
 header {
     height: 100vh;
     background: url("../../assets/images/backenmain.jpg") no-repeat;
-    background-size: 100%;
+    background-size: 100vh;
 }
 
 
