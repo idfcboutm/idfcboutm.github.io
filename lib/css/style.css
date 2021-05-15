@@ -1,13 +1,13 @@
 @font-face {
-    font-family: "Script MT";
-    src: url(assets/fonts/SCRIPTBL.TTF);
+    font-family: "SF Pro Text";
+    src: url("assets/images/SFPROTEXT.TTF");
 }
 
 :root {
     --clr-primary-300: #D0C8BC;
     --clr-primary-600: #553810;
     --clr-accent-400: #9D6265;
-    --ff-primary: "Kameron", sans-serif;
+    --ff-primary: "SF Pro Text", "Helvetica", "Arial", sans-serif;
     --ff-accent: "Script MT", sans-serif;
 }
 
@@ -63,10 +63,6 @@ a {
     color: black;
 }
 
-.mg-t-5 {
-    margin-top: 15rem;
-}
-
 
 /*****************************
  *
@@ -88,15 +84,13 @@ header {
     margin-right: 2rem;
     position: relative;
     display: flex;
+    z-index: 1;
 }
 
 .menulist li {
-    font-size: 1.5rem;
+    font-size: 0.7rem;
     position: relative;
     margin: 0.5rem;
-}
-
-.menulist li {
     text-decoration: none;
     color: white;
     display: block;
@@ -125,6 +119,7 @@ header {
     margin: 3px 20px 0px 0px;
     position: relative;
     display: none;
+    z-index: 2;
 }
 
 .menuline {
@@ -135,7 +130,6 @@ header {
     margin: auto;
     display: flex;
     top: 50%;
-    z-index: 1;
 }
 
 .menuline::before {
@@ -145,7 +139,6 @@ header {
     height: 2px;
     width: 25px;
     top: -8px;
-    z-index: 1;
 }
 
 .menuline::after {
@@ -155,7 +148,6 @@ header {
     height: 2px;
     width: 25px;
     top: 8px;
-    z-index: 1;
 }
 
 @media only screen and (max-width:680px) {
@@ -172,7 +164,9 @@ header {
         right: -100%;
         opacity: 1;
     }
-    .menulist li a {
+    .menulist li a,
+    .menulist li,
+    .menulist li svg {
         text-decoration: none;
         color: var(--clr-primary-600);
     }
@@ -183,7 +177,9 @@ header {
         display: block;
         margin-right: 0px;
     }
-    .menulist li a {
+    .menulist li a,
+    .menulist li,
+    .menulist li svg {
         font-size: 22px;
         text-align: center;
     }
@@ -202,23 +198,37 @@ header {
 }
 
 header h1 {
-    font-size: 7rem;
+    font-size: 3rem;
     color: var(--clr-primary-300);
-    text-shadow: 0px 5px 5px var(--clr-primary-600);
+    /*text-shadow: 0px 5px 5px var(--clr-primary-600);*/
+    position: absolute;
+    top: 35%;
+    z-index: 0;
+}
+
+header h1#überschriftschatten {
+    position: absolute;
+    top: 35%;
+    left: 9.7%;
+    color: var(--clr-primary-600);
 }
 
 header h2 {
-    font-size: 3rem;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 45%;
 }
 
 header svg#scrolldown {
-    margin-top: 15rem;
+    margin-top: 10rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
 }
 
 nav ul li ul {
     display: none;
-    position: absolut;
-    background-color: white;
+    position: absolute;
     text-decoration: none;
 }
 
@@ -231,7 +241,7 @@ nav ul li ul li a {
     text-decoration: none;
 }
 
-nav ul li#dropdwn:hover {
+nav ul li:hover ul {
     display: block;
 }
 
@@ -243,62 +253,57 @@ nav ul li#dropdwn:hover {
  *****************************/
 
 
-/* Extra small devices (portrait phones, less than 576px) *
+/* Extra small devices (portrait phones, less than 576px) */
 
-@media (max-width: 575.98px) {
-    html,
-    body {
-        font-size: 5px;
+@media (max-width: 392.98px) {
+    header h2 {
+        top: 50%;
     }
 }
 
-
-/*  Small devices sm (landscape phones, 576px and up) *
-
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 576px) and(max-width: 767.98px) {
     html,
     body {
-        font-size: 6px;
+        font-size: 20px;
     }
 }
-
-
-/*  Medium devices md (tablets, 768px and up) *
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     html,
     body {
-        font-size: 8px;
+        font-size: 20px;
+    }
+    header h2 {
+        top: 43%;
     }
 }
 
 
-/*  Large2 devices lg (desktops, 992px and up) *
+/*  Large2 devices lg (desktops, 992px and up) */
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
     html,
     body {
-        font-size: 10px;
+        font-size: 24px;
     }
 }
 
 
-/*  Large devices lg (desktops, 992px and up) *
+/*  Large devices lg (desktops, 992px and up) */
 
 @media (min-width: 1200px) and (max-width: 1299.98px) {
     html,
     body {
-        font-size: 12px;
+        font-size: 26px;
     }
 }
 
 
-/*  Extra large devices xl (large desktops, 1200px and up) *
+/*  Extra large devices xl (large desktops, 1200px and up) */
 
 @media (min-width: 1300px) {
     html,
     body {
-        font-size: 14px;
+        font-size: 30px;
     }
 }
-*/
