@@ -219,7 +219,7 @@ nav ul li:hover ul {
         position: block;
         text-decoration: none;
         left: 50%;
-        top: 50%;
+        top: 100%;
         transform: translate(-50%, -50%);
         margin-top: 10%;
         opacity: 0;
@@ -286,9 +286,6 @@ header svg#scrolldown {
 @media (max-width: 392.98px) {
     header h2 {
         top: 50%;
-    }
-    nav ul li#dropdwn:hover~#firstimg {
-        margin-top: 7rem;
     }
 }
 
