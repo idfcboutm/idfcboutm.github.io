@@ -79,9 +79,11 @@ header {
 }
 
 nav ul li ul {
-    display: none;
+    visibility: hidden;
     position: absolute;
     text-decoration: none;
+    opacity: 0;
+    transition: 0.5s ease;
 }
 
 nav ul li ul li {
@@ -94,7 +96,8 @@ nav ul li ul li a {
 }
 
 nav ul li:hover ul {
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .menulist {
@@ -212,13 +215,15 @@ nav ul li:hover ul {
         transform: rotate(90deg);
     }
     nav ul li ul {
-        display: none;
+        visibility: hidden;
         position: block;
         text-decoration: none;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         margin-top: 10%;
+        opacity: 0;
+        transition: 0.5s ease;
     }
     nav ul li ul li {
         text-decoration: none;
@@ -228,7 +233,14 @@ nav ul li:hover ul {
         text-decoration: none;
     }
     nav ul li#dropdwn:hover ul {
-        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+    nav ul li#dropdwn:hover~#firstimg {
+        margin-top: 6rem;
+    }
+    nav ul li#firstimg {
+        transition: 0.3s;
     }
 }
 
