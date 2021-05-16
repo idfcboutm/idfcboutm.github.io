@@ -95,7 +95,7 @@ nav ul li ul li a {
     text-decoration: none;
 }
 
-nav ul li:hover ul {
+nav ul li:active ul {
     visibility: visible;
     opacity: 1;
 }
@@ -232,11 +232,11 @@ nav ul li:hover ul {
     nav ul li ul li a {
         text-decoration: none;
     }
-    nav ul li#dropdwn:hover ul {
+    nav ul li#dropdwn:active ul {
         visibility: visible;
         opacity: 1;
     }
-    nav ul li#dropdwn:hover~#firstimg {
+    nav ul li#dropdwn:active~#firstimg {
         margin-top: 6rem;
     }
     nav ul li#firstimg {
@@ -245,25 +245,28 @@ nav ul li:hover ul {
 }
 
 header h1 {
-    font-size: 3rem;
-    color: var(--clr-primary-300);
-    /*text-shadow: 0px 5px 5px var(--clr-primary-600);*/
-    position: absolute;
-    top: 35%;
     z-index: 0;
+    position: absolute;
+}
+
+#headdings {
+    position: relative;
+    top: 35%;
+    font-size: 2rem;
+    color: var(--clr-primary-300);
 }
 
 header h1#überschriftschatten {
     position: absolute;
-    top: 35%;
-    left: 9.7%;
+    left: -0.3%;
     color: var(--clr-primary-600);
+    z-index: 0;
 }
 
 header h2 {
     font-size: 1.5rem;
     position: absolute;
-    top: 45%;
+    bottom: 0;
 }
 
 header svg#scrolldown {
@@ -287,6 +290,9 @@ header svg#scrolldown {
     header h2 {
         top: 50%;
     }
+    nav ul li#dropdwn:active~#firstimg {
+        margin-top: 6rem;
+    }
 }
 
 @media (min-width: 576px) and(max-width: 767.98px) {
@@ -300,9 +306,6 @@ header svg#scrolldown {
     html,
     body {
         font-size: 20px;
-    }
-    header h2 {
-        top: 43%;
     }
 }
 
