@@ -15,35 +15,38 @@
 
     <header>
         <nav>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <input class="check" type="checkbox">
             <div class="ham-menu">
                 <div class="menuline"></div>
             </div>
             <ul class='menulist'>
-                <li><a href="">Home</a></li>
-                <li><a href="">Über Mich</a></li>
-                <li id="dropdwn">
+                <li><a href="" class="menu-main-item">Home</a></li>
+                <li><a href="" class="menu-main-item">Über Mich</a></li>
+                <li id="dropdwn" class="menu-main-item">
                     Rezepte
-                    <svg class="text-white " xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                    <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                     </svg>
                     <ul>
-                        <li><a href="">Kuchen</a></li>
+                        <li id="firstdropdwn"><a href="">Kuchen</a></li>
                         <li><a href="">Muffins</a></li>
                     </ul>
                 </li>
-                <li id="firstimg">
-                    <a href=""><img src="assets/images/facebooklogo.png" alt="" height="30px"></a>
-                </li>
-                <li>
-                    <a href=""><img src="assets/images/youtubeloge.png" alt="" height="30px"></a>
-                </li>
-                <li>
-                    <a href=""><img src="assets/images/instalogo.png" alt="" height="30px"></a>
-                </li>
+                <div class="socialmedia">
+                    <li id="firstimg">
+                        <a href=""><img src="assets/images/facebooklogo.png" alt="" height="30px"></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="assets/images/youtubeloge.png" alt="" height="30px"></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="assets/images/instalogo.png" alt="" height="30px"></a>
+                    </li>
+                </div>
             </ul>
         </nav>
-        <div class="container mg-t-5 container--narrow" id="headdings">
+        <div class="container container--narrow abstand" id="headdings">
             <h1 id="überschriftschatten">Tonis Backblog</h1>
             <h1>Tonis Backblog</h1>
             <h2 class="text-white">Backen aus Leidenschaft</h2>
@@ -57,22 +60,22 @@
 
     <section id="content">
         <div class="container">
-            <div class="split">
-                <div>
+            <div class="grid">
+                <div class="grid-item">
                     <h1>Neues</h1>
-                    <img src="assets/images/käsekuchen.jpg" alt="" height="100px">
+                    <img src="assets/images/käsekuchen.png" class="left-image" alt="">
                     <h3>
                         Mega leckerer Käsekuchen
                     </h3>
                     <p>
                         Heute gibt es süßen Käse - nein so heißt nur der Name, des leckeren Kuchens: "Käsekuchen"
                     </p>
-                    <div>
+                    <div class="button">
                         <p>
                             Weiterlesen
                         </p>
                     </div>
-                    <img src="assets/images/muffins.jpg" alt="" height="100px">
+                    <img src="assets/images/muffins.png" class="left-image" alt="">
                     <h3>Muffins</h3>
                     <p>
                         Muffins sind immer lecker vor allem Schoko... ach Schokomuffins gibt es erst nächste Woche, aber ich verspreche euch, dass das Rezept euch umhauen wird
@@ -83,7 +86,7 @@
                         </p>
                     </div>
                 </div>
-                <div>
+                <div class="grid-item">
                     <img src="assets/images/kontaktrechts.jpg" alt="" height="100px">
                     <ul>
                         <li>
@@ -114,7 +117,7 @@
         <p><a href="">Impressum</a> <a href="">Datenschutz</a></p>
         <ul>
             <li>
-                <a href=""><img src="assets/images/facebooklogo.png" alt="" height="20px"></a>
+                <a href=""><img src="assets/images/facebooklogo.png" alt="" height="20px" style="object-fit: cover;"></a>
             </li>
             <li>
                 <a href=""><img src="assets/images/youtubeloge.png" alt="" height="20px"></a>
@@ -125,33 +128,21 @@
         </ul>
     </footer>
 </body>
-
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function() {
-        // Add smooth scrolling to all links
-        $("a").on('click', function(event) {
-
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
-
-                // Store hash
-                var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function() {
-
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
+    $('.check').change(function() {
+        if ($('.check').is(":checked")) {
+            $('body,html').css('overflow', 'hidden');
+        } else {
+            $('body').css('overflow', 'auto');
+        }
     });
-</script>-->
+    $('.check').change(function() {
+        if ($('.check').is(":not(:checked)")) {
+            $('body,html').css('overflow', 'visible');
+        } else {
+            $('body').css('overflow', 'auto');
+        }
+    })
+</script>
 
 </html>
