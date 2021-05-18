@@ -1,13 +1,18 @@
 @font-face {
     font-family: "SF Pro Text";
-    src: url("assets/images/SFPROTEXT.TTF");
+    src: url(../../assets/fonts/SFPROTEXT.TTF);
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    src: url(../../assets/fonts/NotoSans-Thin.ttf);
 }
 
 :root {
     --clr-primary-300: #D0C8BC;
     --clr-primary-600: #553810;
     --clr-accent-400: #9D6265;
-    --ff-primary: "SF Pro Text", "Helvetica", "Arial", sans-serif;
+    --ff-primary: "Noto Sans", "Helvetica", "Arial", sans-serif;
     --ff-accent: "Script MT", sans-serif;
 }
 
@@ -20,7 +25,6 @@
 * {
     margin: 0;
     padding: 0;
-    margin: 0;
 }
 
 html {
@@ -96,9 +100,13 @@ nav ul li ul li a {
     text-decoration: none;
 }
 
-nav ul li:active ul {
+nav ul li:hover ul {
     visibility: visible;
     opacity: 1;
+}
+
+#firstdropdwn {
+    border-top: solid 1px black;
 }
 
 .menulist {
@@ -113,10 +121,10 @@ nav ul li:active ul {
 .menulist li {
     font-size: 0.7rem;
     position: relative;
-    margin: 0.5rem;
     text-decoration: none;
     color: white;
     display: block;
+    margin: 0.8rem;
 }
 
 .menulist li a {
@@ -146,7 +154,7 @@ nav ul li:active ul {
 }
 
 .menuline {
-    background: #ffffff;
+    background: white;
     height: 2px;
     width: 25px;
     position: relative;
@@ -158,7 +166,7 @@ nav ul li:active ul {
 .menuline::before {
     content: '';
     position: absolute;
-    background: #ffffff;
+    background: white;
     height: 2px;
     width: 25px;
     top: -8px;
@@ -167,10 +175,14 @@ nav ul li:active ul {
 .menuline::after {
     content: '';
     position: absolute;
-    background: #ffffff;
+    background: white;
     height: 2px;
     width: 25px;
     top: 8px;
+}
+
+.socialmedia {
+    display: flex;
 }
 
 @media only screen and (max-width:680px) {
@@ -179,7 +191,7 @@ nav ul li:active ul {
         width: 100%;
         height: 100%;
         margin-right: 0px;
-        background: var(--clr-primary-300);
+        background: white;
         top: 0;
         padding-top: 50px;
         text-align: center;
@@ -187,15 +199,24 @@ nav ul li:active ul {
         right: -100%;
         opacity: 1;
         display: block;
-        margin-right: 0px;
+    }
+    .menu-main-item {
+        border-bottom: solid 1px black;
+        padding: 2rem;
+        margin: 0;
+    }
+    .menulist li svg {
+        height: 36px;
+        width: 36px;
     }
     .menulist li a,
     .menulist li,
     .menulist li svg {
         text-decoration: none;
-        color: var(--clr-primary-600);
-        font-size: 22px;
+        color: black;
         text-align: center;
+        font-size: 3rem;
+        font-weight: 100;
     }
     .ham-menu {
         display: block;
@@ -209,11 +230,30 @@ nav ul li:active ul {
     .check:checked~.ham-menu .menuline {
         transform: rotate(135deg);
         transition: 0.3s ease;
+        background: black;
     }
     .check:checked~.ham-menu .menuline::before,
     .check:checked~.ham-menu .menuline::after {
         top: 0;
         transform: rotate(90deg);
+        background: black;
+    }
+    .check:not(.checked)~.ham-menu .menuline {
+        transform: rotate(135deg);
+        transition: 0.3s ease;
+    }
+    .check:not(:checked)~.ham-menu .menuline {
+        transform: rotate(0deg);
+    }
+    .check:not(:checked)~.ham-menu .menuline::before,
+    .check:not(:checked)~.ham-menu .menuline::after {
+        transform: rotate(90deg);
+        transition: 0.3s ease;
+    }
+    .check:not(:checked)~.ham-menu .menuline::before,
+    .check:not(:checked)~.ham-menu .menuline::after {
+        transform: rotate(0deg);
+        transition: 0.3s ease;
     }
     nav ul li ul {
         visibility: hidden;
@@ -233,15 +273,24 @@ nav ul li:active ul {
     nav ul li ul li a {
         text-decoration: none;
     }
-    nav ul li#dropdwn:active ul {
+    li#dropdwn:hover ul {
         visibility: visible;
         opacity: 1;
     }
-    nav ul li#dropdwn:active~#firstimg {
+    li#dropdwn:hover~#firstimg {
         margin-top: 6rem;
     }
-    nav ul li#firstimg {
+    li#firstimg {
         transition: 0.3s;
+    }
+    .socialmedia {
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        position: relative;
+        top: 20%;
+    }
+    #firstdropdwn {
+        border-top: none;
     }
 }
 
@@ -257,7 +306,7 @@ header h1 {
     color: var(--clr-primary-300);
 }
 
-header h1#überschriftschatten {
+h1#überschriftschatten {
     position: absolute;
     left: -0.3%;
     color: var(--clr-primary-600);
@@ -280,6 +329,66 @@ header svg#scrolldown {
 
 /*****************************
  *
+ * Main Part
+ *
+ *****************************/
+
+.grid>div {
+    border: solid 1px black;
+}
+
+div.grid {
+    display: grid;
+    grid-template-columns: 70% 20%;
+    grid-gap: 3rem;
+    grid-column: 60%;
+}
+
+div.grid-item {
+    padding: 10px;
+}
+
+.left-image {
+    width: 80%;
+}
+
+.grid h1 {
+    font-size: 3rem;
+}
+
+.grid h3 {
+    font-size: 1.5rem;
+    color: var(--clr-accent-400);
+}
+
+.grid ul {
+    list-style: none;
+}
+
+.button {
+    border-radius: 6px;
+    background-color: var(--clr-accent-400);
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.button p {
+    padding: 0.5rem;
+    font-weight: 800;
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    background-color: white;
+}
+
+.button:hover p {
+    color: var(--clr-accent-400);
+}
+
+
+/*****************************
+ *
  * Viewports, Viewports setzt man, damit die Website responsive ist. Das heißt, die Website passt sich an die Größe des Endgerätes an und wird strukturiert angezeigt.
  *
  *****************************/
@@ -288,10 +397,7 @@ header svg#scrolldown {
 /* Extra small devices (portrait phones, less than 576px) */
 
 @media (max-width: 392.98px) {
-    header h2 {
-        top: 50%;
-    }
-    nav ul li#dropdwn:active~#firstimg {
+    li#dropdwn:hover~#firstimg {
         margin-top: 6rem;
     }
 }
