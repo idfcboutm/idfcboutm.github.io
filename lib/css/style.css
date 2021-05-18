@@ -273,15 +273,9 @@ nav ul li:hover ul {
     nav ul li ul li a {
         text-decoration: none;
     }
-    li#dropdwn:hover ul {
+    li#dropdwn:active ul {
         visibility: visible;
         opacity: 1;
-    }
-    li#dropdwn:hover~#firstimg {
-        margin-top: 6rem;
-    }
-    li#firstimg {
-        transition: 0.3s;
     }
     .socialmedia {
         display: grid;
