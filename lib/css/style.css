@@ -8,6 +8,11 @@
     src: url(../../assets/fonts/NotoSans-Thin.ttf);
 }
 
+@font-face {
+    font-family: "SCRIPTBL";
+    src: url(../../assets/fonts/SCRIPTBL.TTF);
+}
+
 :root {
     --clr-primary-300: #D0C8BC;
     --clr-primary-600: #553810;
@@ -43,7 +48,7 @@ body {
 
 header,
 section {
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 .text-white {
@@ -89,6 +94,13 @@ nav ul li ul {
     text-decoration: none;
     opacity: 0;
     transition: 0.5s ease;
+    margin-top: 10%;
+    border-top-width: 2px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-style: solid;
+    box-shadow: 0 4px 10px -2px rgba(0, 0, 0, .1);
 }
 
 nav ul li ul li {
@@ -103,10 +115,6 @@ nav ul li ul li a {
 nav ul li:hover ul {
     visibility: visible;
     opacity: 1;
-}
-
-#firstdropdwn {
-    border-top: solid 1px black;
 }
 
 .menulist {
@@ -265,26 +273,46 @@ nav ul li:hover ul {
         margin-top: 10%;
         opacity: 0;
         transition: 0.5s ease;
+        border-style: none;
+        box-shadow: none;
     }
     nav ul li ul li {
         text-decoration: none;
         list-style: none;
+        border-bottom: solid 1px black;
     }
     nav ul li ul li a {
         text-decoration: none;
     }
+    li#dropdwn ul {
+        margin-top: -50px;
+    }
     li#dropdwn:active ul {
         visibility: visible;
         opacity: 1;
+        margin-top: 60px;
+    }
+    li#dropdwn {
+        transition: 0.3s;
+        display: inline-block;
+    }
+    #dropdwn:active {
+        border-bottom: none;
     }
     .socialmedia {
         display: grid;
         grid-template-columns: 33.33% 33.33% 33.33%;
-        position: relative;
-        top: 20%;
+        position: absolute;
+        bottom: -5vh;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     #firstdropdwn {
         border-top: none;
+    }
+    .socialmedia li {
+        padding-left: 10vw;
+        padding-right: 10vw;
     }
 }
 
@@ -302,7 +330,7 @@ header h1 {
 
 h1#überschriftschatten {
     position: absolute;
-    left: -0.3%;
+    left: -0.5%;
     color: var(--clr-primary-600);
     z-index: 0;
 }
@@ -327,19 +355,11 @@ header svg#scrolldown {
  *
  *****************************/
 
-.grid>div {
-    border: solid 1px black;
-}
-
 div.grid {
     display: grid;
-    grid-template-columns: 70% 20%;
-    grid-gap: 3rem;
+    grid-template-columns: 70% 24%;
+    grid-gap: 1rem;
     grid-column: 60%;
-}
-
-div.grid-item {
-    padding: 10px;
 }
 
 .left-image {
@@ -353,6 +373,11 @@ div.grid-item {
 .grid h3 {
     font-size: 1.5rem;
     color: var(--clr-accent-400);
+}
+
+.grid p {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 300;
 }
 
 .grid ul {
@@ -390,13 +415,79 @@ div.grid-item {
 
 /* Extra small devices (portrait phones, less than 576px) */
 
-@media (max-width: 392.98px) {
-    li#dropdwn:hover~#firstimg {
-        margin-top: 6rem;
+@media (max-height: 749.98px) {
+    html,
+    body {
+        font-size: 13px;
     }
 }
 
-@media (min-width: 576px) and(max-width: 767.98px) {
+@media (max-width: 575.98px) {
+    section#content {
+        position: relative;
+    }
+    div.grid {
+        display: block;
+        text-align: center;
+        margin: 0 2rem;
+    }
+    .left-image {
+        width: 100%;
+    }
+    .grid h1 {
+        font-size: 3rem;
+    }
+    .grid h3 {
+        font-size: 1.5rem;
+        color: var(--clr-accent-400);
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .grid ul {
+        list-style: none;
+    }
+    .button {
+        border-radius: 6px;
+        background-color: var(--clr-accent-400);
+        display: inline-block;
+        transition: 0.3s ease;
+        margin: 1rem 0px 2.5rem 0px;
+    }
+    .button p {
+        padding: 0.5rem;
+        font-weight: 800;
+        transition: 0.3s ease;
+    }
+    .button:hover {
+        background-color: white;
+    }
+    .button:hover p {
+        color: var(--clr-accent-400);
+    }
+    #rightimg {
+        width: 80%;
+        height: auto;
+    }
+    .pinksocialmedia {
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: 0;
+    }
+    .pinksocialmedia li {
+        padding-left: 9vw;
+        padding-right: 9vw;
+    }
+    .pinksocialmedia img {
+        height: 2rem;
+        width: auto;
+    }
+}
+
+@media (min-width: 576px) and(max-width: 767.98px) and (min-height: 750px) {
     html,
     body {
         font-size: 20px;
